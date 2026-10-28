@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="64">
+  <rect width="560" height="64" rx="6" fill="#0d1117" stroke="#c9d1d9"/>
+  <g font-family="Consolas,Menlo,monospace" font-size="13" fill="#c9d1d9" text-anchor="middle">
+    <text x="280" y="26">uptime: caffeinated | mode: shipping | bugs: in negotiations</text>
+    <text x="280" y="48">life: ██████▒▒░░░░░░░░░░░░░░ 25%</text>
+  </g>
+</svg>
