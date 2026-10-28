@@ -8,16 +8,9 @@
   <img src="assets/name.svg" alt="Sup! I’m Minhaj Shafin" />
 </a>
 
-<div align="center">
-
-<pre>
-┌────────────────────────────── status ──────────────────────────────┐
-│  uptime: caffeinated  |  mode: shipping  |  bugs: in negotiations  │
-│               life: ██████▒▒░░░░░░░░░░░░░░░░░░ 25%                 │
-└────────────────────────────────────────────────────────────────────┘
-</pre>
-
-</div>
+<p align="center">
+  <img src="assets/status.svg" alt="status" width="100%" />
+</p>
 
 <div align="center">
 
