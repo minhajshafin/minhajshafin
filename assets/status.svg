@@ -1,38 +1,73 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 120" width="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 116" width="100%">
   <defs>
-    <!-- Medium shade (▒) pattern -->
-    <pattern id="med-shade" width="4" height="4" patternUnits="userSpaceOnUse">
-      <rect width="2" height="2" x="0" y="0" fill="#e6edf3" />
-      <rect width="2" height="2" x="2" y="2" fill="#e6edf3" />
-    </pattern>
-    <!-- Light shade (░) pattern -->
-    <pattern id="light-shade" width="4" height="4" patternUnits="userSpaceOnUse">
-      <rect width="1.5" height="1.5" x="0" y="0" fill="#e6edf3" opacity="0.7" />
-    </pattern>
     <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #f6f8fa;
+        --fg: #1f2328;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #161b22;
+          --fg: #e6edf3;
+        }
+      }
+      .bg {
+        fill: var(--bg);
+      }
+      .fg {
+        fill: var(--fg);
+      }
       .mono {
-        font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-        font-size: 13.5px;
-        fill: #e6edf3;
+        font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+        font-size: 14px;
+        fill: var(--fg);
         white-space: pre;
       }
     </style>
+
+    <!-- Medium shade (▒) 50% terminal dither -->
+    <pattern id="med-shade" width="2" height="2" patternUnits="userSpaceOnUse">
+      <rect width="1" height="1" x="0" y="0" class="fg" />
+      <rect width="1" height="1" x="1" y="1" class="fg" />
+    </pattern>
+
+    <!-- Light shade (░) 25% terminal dither -->
+    <pattern id="light-shade" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="1" height="1" x="0" y="0" class="fg" />
+      <rect width="1" height="1" x="2" y="2" class="fg" />
+    </pattern>
   </defs>
 
-  <!-- GitHub Dark <pre> background -->
-  <rect width="840" height="120" rx="6" fill="#161b22" />
+  <!-- GitHub <pre> background -->
+  <rect width="840" height="116" rx="6" class="bg" />
 
-  <!-- Box & text -->
-  <text x="420" y="34" text-anchor="middle" class="mono">┌────────────────────────────── status ──────────────────────────────┐</text>
-  <text x="420" y="54" text-anchor="middle" class="mono">│  uptime: caffeinated  |  mode: shipping  |  bugs: in negotiations  │</text>
-  <text x="420" y="74" text-anchor="middle" class="mono">│               life:                            25%                 │</text>
-  <text x="420" y="94" text-anchor="middle" class="mono">└────────────────────────────────────────────────────────────────────┘</text>
+  <!-- Row 1: Top border (locked to 70-char grid: x=126 to x=714) -->
+  <text x="420" y="32" text-anchor="middle" class="mono" xml:space="preserve">┌────────────────────────────── status ──────────────────────────────┐</text>
 
-  <!-- Vector progress bar (never breaks across fonts) -->
+  <!-- Row 2: Status metrics -->
+  <text y="52" class="mono" xml:space="preserve">
+    <tspan x="126">│</tspan>
+    <tspan x="420" text-anchor="middle">uptime: caffeinated  |  mode: shipping  |  bugs: in negotiations</tspan>
+    <tspan x="705.6">│</tspan>
+  </text>
+
+  <!-- Row 3: Life progress bar labels -->
+  <text y="72" class="mono" xml:space="preserve">
+    <tspan x="126">│</tspan>
+    <tspan x="260.4">life:</tspan>
+    <tspan x="537.6">25%</tspan>
+    <tspan x="705.6">│</tspan>
+  </text>
+
+  <!-- Row 3: Vector progress bar (cols 22..48 on 8.4px char grid) -->
   <!-- 6x █ -->
-  <rect x="315" y="62" width="49" height="14" fill="#e6edf3" />
+  <rect x="310.8" y="60" width="50.4" height="14" class="fg" />
   <!-- 2x ▒ -->
-  <rect x="364" y="62" width="16" height="14" fill="url(#med-shade)" />
+  <rect x="361.2" y="60" width="16.8" height="14" fill="url(#med-shade)" />
   <!-- 18x ░ -->
-  <rect x="380" y="62" width="146" height="14" fill="url(#light-shade)" />
+  <rect x="378.0" y="60" width="151.2" height="14" fill="url(#light-shade)" />
+
+  <!-- Row 4: Bottom border -->
+  <text x="420" y="92" text-anchor="middle" class="mono" xml:space="preserve">└────────────────────────────────────────────────────────────────────┘</text>
 </svg>
