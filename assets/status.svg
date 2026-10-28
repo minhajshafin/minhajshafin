@@ -1,7 +1,38 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="560" height="64">
-  <rect width="560" height="64" rx="6" fill="#0d1117" stroke="#c9d1d9"/>
-  <g font-family="Consolas,Menlo,monospace" font-size="13" fill="#c9d1d9" text-anchor="middle">
-    <text x="280" y="26">uptime: caffeinated | mode: shipping | bugs: in negotiations</text>
-    <text x="280" y="48">life: ██████▒▒░░░░░░░░░░░░░░ 25%</text>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 120" width="100%">
+  <defs>
+    <!-- Medium shade (▒) pattern -->
+    <pattern id="med-shade" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="2" height="2" x="0" y="0" fill="#e6edf3" />
+      <rect width="2" height="2" x="2" y="2" fill="#e6edf3" />
+    </pattern>
+    <!-- Light shade (░) pattern -->
+    <pattern id="light-shade" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="1.5" height="1.5" x="0" y="0" fill="#e6edf3" opacity="0.7" />
+    </pattern>
+    <style>
+      .mono {
+        font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 13.5px;
+        fill: #e6edf3;
+        white-space: pre;
+      }
+    </style>
+  </defs>
+
+  <!-- GitHub Dark <pre> background -->
+  <rect width="840" height="120" rx="6" fill="#161b22" />
+
+  <!-- Box & text -->
+  <text x="420" y="34" text-anchor="middle" class="mono">┌────────────────────────────── status ──────────────────────────────┐</text>
+  <text x="420" y="54" text-anchor="middle" class="mono">│  uptime: caffeinated  |  mode: shipping  |  bugs: in negotiations  │</text>
+  <text x="420" y="74" text-anchor="middle" class="mono">│               life:                            25%                 │</text>
+  <text x="420" y="94" text-anchor="middle" class="mono">└────────────────────────────────────────────────────────────────────┘</text>
+
+  <!-- Vector progress bar (never breaks across fonts) -->
+  <!-- 6x █ -->
+  <rect x="315" y="62" width="49" height="14" fill="#e6edf3" />
+  <!-- 2x ▒ -->
+  <rect x="364" y="62" width="16" height="14" fill="url(#med-shade)" />
+  <!-- 18x ░ -->
+  <rect x="380" y="62" width="146" height="14" fill="url(#light-shade)" />
 </svg>
